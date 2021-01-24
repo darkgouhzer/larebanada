@@ -1,1 +1,8 @@
-<app-nav-bar></app-nav-bar>
+<app-nav-bar *ngIf="logged"></app-nav-bar>
+
+<app-login *ngIf="!logged"></app-login>
+<div class="container main-container">
+
+    <router-outlet></router-outlet>
+
+</div>
