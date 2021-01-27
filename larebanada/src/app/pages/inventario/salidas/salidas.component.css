@@ -1,0 +1,19 @@
+.lrb-full-width {
+    width: 100%;
+    font: inherit;
+    font-size: 16px;
+}
+
+.lrb-code-width {
+    width: 30%;
+}
+
+.lrb-desc-width {
+    width: 70%;
+}
+
+.lrb-medium-width {
+    width: 50%;
+    font: inherit;
+    font-size: 16px;
+}

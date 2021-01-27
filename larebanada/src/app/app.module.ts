@@ -1,5 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatInputModule} from '@angular/material/input'; 
+import {MatSelectModule} from '@angular/material/select'; 
+import {MatButtonModule} from '@angular/material/button';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 
 import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +21,9 @@ import { SalidasComponent } from './pages/inventario/salidas/salidas.component';
 import { InventarioComponent } from './pages/reportes/inventario/inventario.component';
 import { ReporteSalidasComponent } from './pages/reportes/reporte-salidas/reporte-salidas.component';
 import { ReporteEntradasComponent } from './pages/reportes/reporte-entradas/reporte-entradas.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AltaActualizaProductoComponent } from './pages/catalogos/productos/alta-actualiza-producto/alta-actualiza-producto.component';
+import { ConsultaProductosComponent } from './pages/catalogos/productos/consulta-productos/consulta-productos.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +38,23 @@ import { ReporteEntradasComponent } from './pages/reportes/reporte-entradas/repo
     SalidasComponent,
     InventarioComponent,
     ReporteSalidasComponent,
-    ReporteEntradasComponent
+    ReporteEntradasComponent,
+    AltaActualizaProductoComponent,
+    ConsultaProductosComponent
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    BrowserAnimationsModule,  
+    MatTabsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSlideToggleModule
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'es-Mx'},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

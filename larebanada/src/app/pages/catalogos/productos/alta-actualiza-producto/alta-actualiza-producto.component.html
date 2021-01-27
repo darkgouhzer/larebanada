@@ -1,0 +1,36 @@
+<div class="container my-5 col-12 col-md-12 col-lg-6">
+    <form class="form-group">
+        <mat-form-field class="lrb-full-width">
+            <mat-label>Código</mat-label>
+            <input matInput placeholder="" value="">
+        </mat-form-field>
+
+        <mat-form-field class="lrb-full-width">
+            <mat-label>Descripción</mat-label>
+            <input matInput placeholder="" value="">
+        </mat-form-field>
+
+        <mat-form-field class="lrb-full-width">
+            <mat-label>Precio</mat-label>
+            <input matInput placeholder="" value="">
+            <span matPrefix>$&nbsp;</span>
+        </mat-form-field>
+
+        <mat-form-field class="lrb-full-width">
+            <mat-label>Valor medida</mat-label>
+            <input matInput placeholder="" value="">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Unidad de medida</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="button">Guardar</button> &nbsp;
+        <button mat-raised-button color="warn" type="button">Eliminar</button>
+    </form>
+
+</div>
