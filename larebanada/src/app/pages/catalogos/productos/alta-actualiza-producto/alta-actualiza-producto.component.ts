@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Producto } from 'src/app/interfaces/producto';
+import { Unidadesmedida } from '../../../../interfaces/unidadesmedida';
+import { ProductoService } from '../../../../services/producto.service';
 
 @Component({
   selector: 'app-alta-actualiza-producto',
@@ -6,23 +9,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alta-actualiza-producto.component.css']
 })
 export class AltaActualizaProductoComponent implements OnInit {
-  
-  //borrar este objeto
-  foods: Food[] = [
-    {value: 'pieza-0', viewValue: 'Pieza (pz)'},
-    {value: 'Litro-1', viewValue: 'Litros (L)'},
-    {value: 'Gramos', viewValue: 'Gramos (gr)'},
-    {value: 'Kilos-2', viewValue: 'Kilos (kg)'}
-  ];
-  constructor() { }
 
-  ngOnInit(): void {
+  unidadesMedida: Unidadesmedida[]=[{
+    id:0,
+    nombre:'',
+    simbolo:'',
+  }];
+   
+  objProducto:Producto={
+    id:0,
+    nombre:'',
+    precio:0,
+    valormedida:0,
+    idunidadesmedida:0,
   }
 
-}
+  constructor(private producto:ProductoService) { }
 
-//borrar esta interface
-interface Food {
-  value: string;
-  viewValue: string;
+  ngOnInit(): void {
+    this.ObtenerUnidadesMedida();   
+  }
+  ObtenerUnidadesMedida():void{
+    
+      this.producto.getUnidadesMedida().subscribe(response =>{
+        console.log(response);
+        this.unidadesMedida = response.data;
+      });
+  }
+
+  GuardarProducto():void{
+    console.log(this.objProducto);
+    this.producto.altaProducto(this.objProducto).subscribe(response =>{
+      console.log(response);
+    });
+  }
 }

@@ -2,34 +2,34 @@
     <form class="form-group">
         <mat-form-field class="lrb-full-width">
             <mat-label>Código</mat-label>
-            <input matInput placeholder="" value="">
+            <input matInput placeholder="" [(ngModel)]="objProducto.id" name="id">
         </mat-form-field>
 
         <mat-form-field class="lrb-full-width">
             <mat-label>Descripción</mat-label>
-            <input matInput placeholder="" value="">
+            <input matInput placeholder="" [(ngModel)]="objProducto.nombre" name="nombre">
         </mat-form-field>
 
         <mat-form-field class="lrb-full-width">
             <mat-label>Precio</mat-label>
-            <input matInput placeholder="" value="">
+            <input matInput placeholder="" [(ngModel)]="objProducto.precio" name="precio">
             <span matPrefix>$&nbsp;</span>
         </mat-form-field>
 
         <mat-form-field class="lrb-full-width">
             <mat-label>Valor medida</mat-label>
-            <input matInput placeholder="" value="">
+            <input matInput placeholder="" [(ngModel)]="objProducto.valormedida" name="valormedida">
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Unidad de medida</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
+            <mat-select [(ngModel)]="objProducto.idunidadesmedida" name="idunidadesmedida">
+                <mat-option *ngFor="let unit of unidadesMedida" [value]="unit.id">
+                    {{unit.nombre}} ( {{unit.simbolo}} )
                 </mat-option>
             </mat-select>
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" type="button">Guardar</button> &nbsp;
+        <button mat-raised-button color="primary" type="button" (click)="GuardarProducto()">Guardar</button> &nbsp;
         <button mat-raised-button color="warn" type="button">Eliminar</button>
     </form>
 

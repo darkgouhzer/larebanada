@@ -9,9 +9,13 @@ import { SalidasComponent } from './pages/inventario/salidas/salidas.component';
 import { ReporteEntradasComponent } from './pages/reportes/reporte-entradas/reporte-entradas.component';
 import { ReporteSalidasComponent } from './pages/reportes/reporte-salidas/reporte-salidas.component';
 import { InventarioComponent } from './pages/reportes/inventario/inventario.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registrar', component: RegisterComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'reposteras', component: ReposterasComponent },
   { path: 'sucursales', component: SucursalesComponent },

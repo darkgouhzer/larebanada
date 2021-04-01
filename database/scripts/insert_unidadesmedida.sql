@@ -1,0 +1,1 @@
+INSERT INTO `unidadesmedida` VALUES (1,'Litros','L'),(2,'Pieza','pz'),(3,'Kilo','KG'),(4,'Gramos','grms');

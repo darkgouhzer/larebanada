@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Entrada } from '../../../interfaces/entrada';
+import { InventarioService } from '../../../services/inventario.service';
 
 @Component({
   selector: 'app-entradas',
@@ -8,14 +10,35 @@ import { Component, OnInit } from '@angular/core';
 export class EntradasComponent implements OnInit {
   //borrar este objeto
   foods: Food[] = [
-    {value: 'repostera-0', viewValue: 'Maria lopez lopez'},
-    {value: 'repostera-1', viewValue: 'Berenice Castro Chavira'},
-    {value: 'repostera-2', viewValue: 'Regina Zavala Haro'},
-    {value: 'repostera-3', viewValue: 'Sulema Bojorquez'}
+    {value: '1', viewValue: 'Maria lopez lopez'},
+    {value: '2', viewValue: 'Berenice Castro Chavira'},
+    {value: '3', viewValue: 'Regina Zavala Haro'},
+    {value: '4', viewValue: 'Sulema Bojorquez'}
   ];
-  constructor() { }
+  entrada:Entrada =  {
+    cantidad :0,
+    idproductos :0,
+    idsucursales :1,
+    idrepostera:0,
+    users_id:1,
+    catmotivoentradas_id:1,
+};
+  constructor(private inventario:InventarioService) { }
 
   ngOnInit(): void {
+  }
+
+  AgregarEntrada():void{
+  
+  
+  console.log(this.entrada);
+
+  this.inventario.realizarEntrada(this.entrada).subscribe(response =>{
+    console.log(response);
+  });
+  
+
+
   }
 
 }
