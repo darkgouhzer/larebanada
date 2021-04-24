@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active">La Rebanada</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -46,4 +46,40 @@
             </li>
         </ul>
     </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand h1" [routerLink]="['/home']" routerLinkActive="active">La Rebanada</a>
+
+    <button class="menu-bar-lb" mat-button [matMenuTriggerFor]="catalogo">Catálogos</button>
+    <button class="menu-bar-lb" mat-button [matMenuTriggerFor]="inventario">Inventario</button>
+    <button class="menu-bar-lb" mat-button [matMenuTriggerFor]="reportes">Reportes</button>
+    <button class="menu-bar-lb" mat-button [matMenuTriggerFor]="usuarios">Usuarios</button>
+    <mat-menu #catalogo="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="altasbajas">Productos</button>
+        <button mat-menu-item [routerLink]="['/reposteras']" routerLinkActive="active">Reposteras</button>
+        <button mat-menu-item [routerLink]="['/sucursales']" routerLinkActive="active">Consulta sucursales</button>
+    </mat-menu>
+
+    <mat-menu #altasbajas="matMenu">
+        <button mat-menu-item [routerLink]="['/productos-altas']" routerLinkActive="active">Altas y cambios</button>
+        <button mat-menu-item [routerLink]="['/productos-consultas']" routerLinkActive="active">Consultas</button>
+    </mat-menu>
+
+    <mat-menu #inventario="matMenu">
+        <button mat-menu-item [routerLink]="['/entradas']" routerLinkActive="active">Entradas</button>
+        <button mat-menu-item [routerLink]="['/salidas']" routerLinkActive="active">Salidas</button>
+    </mat-menu>
+
+    <mat-menu #reportes="matMenu">
+        <button mat-menu-item [routerLink]="['/reporte/entradas']" routerLinkActive="active">Entradas</button>
+        <button mat-menu-item [routerLink]="['/reporte/salidas']" routerLinkActive="active">Salidas</button>
+        <button mat-menu-item [routerLink]="['/reporte/inventario']" routerLinkActive="active">Inventario</button>
+    </mat-menu>
+
+    <mat-menu #usuarios="matMenu">
+        <button mat-menu-item>Altas y modificaciones</button>
+        <button mat-menu-item>Cerrar sesión</button>
+    </mat-menu>
+
 </nav>

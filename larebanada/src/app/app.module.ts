@@ -28,6 +28,8 @@ import { AltaActualizaProductoComponent } from './pages/catalogos/productos/alta
 import { ConsultaProductosComponent } from './pages/catalogos/productos/consulta-productos/consulta-productos.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { DemoMaterialModule } from './material-modules';
+import { DatagridviewComponent } from './components/grid/datagridview/datagridview.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { MessagesComponent } from './components/messages/messages.component';
     AltaActualizaProductoComponent,
     ConsultaProductosComponent,
     RegisterComponent,
-    MessagesComponent
+    MessagesComponent,
+    DatagridviewComponent
   ],
   imports: [
     BrowserModule,
@@ -54,13 +57,14 @@ import { MessagesComponent } from './components/messages/messages.component';
     BrowserAnimationsModule,  
     HttpClientModule,
     FormsModule,
-    MatTabsModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSlideToggleModule,
+    // MatTabsModule,
+    // MatInputModule,
+    // MatSelectModule,
+    // MatButtonModule,
+    // MatDatepickerModule,
+    // MatNativeDateModule,
+    // MatSlideToggleModule,
+    DemoMaterialModule,
     ReactiveFormsModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'es-Mx'},{provide: ErrorHandler}],

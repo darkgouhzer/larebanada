@@ -1,1 +1,2 @@
-<p>consulta-productos works!</p>
+<app-datagridview [showSearch]="true" [columns]="columnasProductos" [dataSource]="dataSource" (newSearchEvent)="ConsultarProductos($event)" [ngClassElevation]="ngElevationClass">
+</app-datagridview>

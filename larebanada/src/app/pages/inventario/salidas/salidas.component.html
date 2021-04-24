@@ -1,40 +1,38 @@
-<div class="container-lg mt-3 col-12 col-sm-8 col-md-6 col-lg-8">
-    <h2 class="mb-4">Salida de inventario</h2>
-    <div class="container my-5 col-12 col-md-12 col-lg-6">
-        <form class="lrb-full-width">
-            <mat-form-field class="lrb-full-width">
-                <mat-label>Código de producto</mat-label>
-                <input matInput placeholder="" value="">
-            </mat-form-field>
-            <mat-form-field class="lrb-full-width">
-                <mat-label class="lrb-full-width">Descripción producto</mat-label>
-                <input matInput placeholder="" value="" [readonly]="true">
-            </mat-form-field>
+<h2 class="mb-4 mt-4">Salida de inventario</h2>
+<div class="container my-5 p-5 col-12 col-md-12 col-lg-6 mat-elevation-z8">
+    <form class="lrb-full-width">
+        <mat-form-field class="lrb-full-width">
+            <mat-label>Código de producto</mat-label>
+            <input matInput placeholder="" value="">
+        </mat-form-field>
+        <mat-form-field class="lrb-full-width">
+            <mat-label class="lrb-full-width">Descripción producto</mat-label>
+            <input matInput placeholder="" value="" [readonly]="true">
+        </mat-form-field>
 
-            <mat-form-field class="lrb-full-width">
-                <mat-label>Cantidad</mat-label>
-                <input matInput placeholder="" value="">
-            </mat-form-field>
+        <mat-form-field class="lrb-full-width">
+            <mat-label>Cantidad</mat-label>
+            <input matInput placeholder="" value="">
+        </mat-form-field>
 
-            <mat-form-field appearance="fill" class="lrb-full-width">
-                <mat-label>Sucursal</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+        <mat-form-field appearance="fill" class="lrb-full-width">
+            <mat-label>Sucursal</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-            <mat-form-field class="lrb-full-width" appearance="fill">
-                <mat-label>Fecha</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker touchUi #picker></mat-datepicker>
-            </mat-form-field>
+        <mat-form-field class="lrb-full-width" appearance="fill">
+            <mat-label>Fecha</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
 
-            <br>
-            <button mat-raised-button color="primary" type="button">Ingresar inventario</button>
-        </form>
+        <br>
+        <button mat-raised-button color="primary" type="button">Ingresar inventario</button>
+    </form>
 
-    </div>
 </div>

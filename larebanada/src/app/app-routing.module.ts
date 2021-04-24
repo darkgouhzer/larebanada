@@ -11,12 +11,15 @@ import { ReporteSalidasComponent } from './pages/reportes/reporte-salidas/report
 import { InventarioComponent } from './pages/reportes/inventario/inventario.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AltaActualizaProductoComponent } from './pages/catalogos/productos/alta-actualiza-producto/alta-actualiza-producto.component';
+import { ConsultaProductosComponent } from './pages/catalogos/productos/consulta-productos/consulta-productos.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registrar', component: RegisterComponent },
-  { path: 'productos', component: ProductosComponent },
+  { path: 'productos-altas', component: AltaActualizaProductoComponent },
+  { path: 'productos-consultas', component: ConsultaProductosComponent },
   { path: 'reposteras', component: ReposterasComponent },
   { path: 'sucursales', component: SucursalesComponent },
   { path: 'entradas', component: EntradasComponent },
@@ -24,7 +27,7 @@ const APP_ROUTES: Routes = [
   { path: 'reporte/entradas', component: ReporteEntradasComponent },
   { path: 'reporte/salidas', component: ReporteSalidasComponent },
   { path: 'reporte/inventario', component: InventarioComponent },
-  { path: '**', pathMatch: 'full', redirectTo: '/' }
+  { path: '**', pathMatch: 'full', redirectTo: '/home' }
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash:false});
