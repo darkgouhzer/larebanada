@@ -1,13 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {MatTabsModule} from '@angular/material/tabs'; 
-import {MatInputModule} from '@angular/material/input'; 
-import {MatSelectModule} from '@angular/material/select'; 
-import {MatButtonModule} from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker'; 
-import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { APP_ROUTING } from './app-routing.module';
@@ -29,7 +22,17 @@ import { ConsultaProductosComponent } from './pages/catalogos/productos/consulta
 import { RegisterComponent } from './components/register/register.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { DemoMaterialModule } from './material-modules';
-import { DatagridviewComponent } from './components/grid/datagridview/datagridview.component';
+
+import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatInputModule,} from '@angular/material/input'; 
+import {MatSelectModule} from '@angular/material/select'; 
+import {MatButtonModule} from '@angular/material/button';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -48,24 +51,26 @@ import { DatagridviewComponent } from './components/grid/datagridview/datagridvi
     AltaActualizaProductoComponent,
     ConsultaProductosComponent,
     RegisterComponent,
-    MessagesComponent,
-    DatagridviewComponent
+    MessagesComponent
   ],
   imports: [    
     BrowserModule,
     APP_ROUTING,
     BrowserAnimationsModule,  
     HttpClientModule,
-    FormsModule,
-    // MatTabsModule,
-    // MatInputModule,
-    // MatSelectModule,
-    // MatButtonModule,
-    // MatDatepickerModule,
-    // MatNativeDateModule,
-    // MatSlideToggleModule,
+    FormsModule,    
+    MatTabsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSlideToggleModule,
     DemoMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'es-Mx'},{provide: ErrorHandler}],
   bootstrap: [AppComponent]

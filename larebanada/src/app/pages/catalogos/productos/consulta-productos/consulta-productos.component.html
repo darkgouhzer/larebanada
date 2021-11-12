@@ -1,48 +1,48 @@
-<!-- <app-datagridview [showSearch]="true" [columns]="columnasProductos" [dataSource]="dataSource" (newSearchEvent)="ConsultarProductos($event)" [ngClassElevation]="ngElevationClass">
-</app-datagridview> -->
+<div class="example-loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
 
-
-<div class="example-container mat-elevation-z8">
-    <div class="example-loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
-        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-        <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
-            GitHub's API rate limit has been reached. It will be reset in one minute.
-        </div>
     </div>
+</div>
 
-    <div class="example-table-container">
+<div class="mb-4 mt-4 text-center">
+    <h2>
+        Consulta de productos
+    </h2>
+</div>
+<mat-form-field appearance="standard" class="d-flex justify-content-end">
+    <mat-label>Buscar producto</mat-label>
+    <input matInput (change)="applyFilter($event)" placeholder="nombre del producto" #input>
+</mat-form-field>
+<div class="mat-elevation-z3">
+    <table mat-table matTableFilter [dataSource]="data" class="full-width-table" matSort aria-label="Elements">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+        </ng-container>
+        <!-- name Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let row">{{row.nombre}}</td>
+        </ng-container>
 
-        <table mat-table [dataSource]="data" class="example-table" matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
-            <!-- Number Column -->
-            <ng-container matColumnDef="number">
-                <th mat-header-cell *matHeaderCellDef>#</th>
-                <td mat-cell *matCellDef="let row">{{row.number}}</td>
-            </ng-container>
+        <!-- price Column -->
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
+            <td mat-cell *matCellDef="let row">{{row.precio | currency}}</td>
+        </ng-container>
 
-            <!-- Title Column -->
-            <ng-container matColumnDef="title">
-                <th mat-header-cell *matHeaderCellDef>Title</th>
-                <td mat-cell *matCellDef="let row">{{row.title}}</td>
-            </ng-container>
+        <!-- Unidad Medida Column -->
+        <ng-container matColumnDef="valormedida">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Unidad de medida</th>
+            <td mat-cell *matCellDef="let row">{{row.valormedida }} {{row.simbolo }}</td>
+        </ng-container>
 
-            <!-- State Column -->
-            <ng-container matColumnDef="state">
-                <th mat-header-cell *matHeaderCellDef>State</th>
-                <td mat-cell *matCellDef="let row">{{row.state}}</td>
-            </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
-            <!-- Created Column -->
-            <ng-container matColumnDef="created">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
-                    Created
-                </th>
-                <td mat-cell *matCellDef="let row">{{row.created_at | date}}</td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    </div>
-
-    <mat-paginator [length]="resultsLength" [pageSize]="30"></mat-paginator>
+    <mat-paginator #paginator [length]="resultsLength" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" aria-label="Select page">
+    </mat-paginator>
 </div>

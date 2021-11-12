@@ -1,0 +1,10 @@
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\bin\Debug\PrinterBackground.exe.config
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\bin\Debug\PrinterBackground.exe
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\bin\Debug\PrinterBackground.pdb
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\obj\Debug\PrinterBackground.csproj.AssemblyReference.cache
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\obj\Debug\PrinterBackground.Form1.resources
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\obj\Debug\PrinterBackground.Properties.Resources.resources
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\obj\Debug\PrinterBackground.csproj.GenerateResource.cache
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\obj\Debug\PrinterBackground.csproj.CoreCompileInputs.cache
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\obj\Debug\PrinterBackground.exe
+C:\Users\RHBA\Documents\GitHub\larebanada\PrinterService\PrinterBackground\PrinterBackground\obj\Debug\PrinterBackground.pdb

@@ -8,6 +8,7 @@ import { Unidadesmedida } from '../interfaces/unidadesmedida';
 import { Responses } from '../interfaces/responses';
 import { environment as env } from '../../environments/environment';
 import { Productosfilter } from '../interfaces/productosfilter';
+import { PaginatedData } from '../interfaces/paginated-data';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class ProductoService {
   private apiProductoById = env.apiUrl+'/producto/id';
   private apiProductoEliminar= env.apiUrl+'/producto/eliminar';
   private apiProductoByDesc = env.apiUrl+'/producto/nombre/desc-';
+  
   
   httpOptions = {
     headers: new HttpHeaders({'Authorization': `Bearer 8|Hqa37CkWLiBQBjvopB4krI22SMHuvGjyqlXUgUHo` })
@@ -54,6 +56,11 @@ export class ProductoService {
       tap((productos: Productosfilter)  => this.log(`get Producto by desc`)),
       catchError(this.handleError<any>('get Producto by desc')) 
     );
+  }
+
+  getProductoByDescPaginated(desc:string, page:number, pageSize:number ):Observable<Responses<PaginatedData<Producto>>>{
+    // console.log(this.apiProductoByDesc+desc);
+    return this.http.get<Responses<PaginatedData<Producto>>>(this.apiProductoByDesc+desc+"/"+page+"/"+pageSize,this.httpOptions);
   }
 
   eliminarProductoById(id:number):Observable<Responses<Producto>>{

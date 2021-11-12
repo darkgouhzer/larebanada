@@ -1,5 +1,5 @@
-<h2 class="mb-4 mt-4">Productos - Altas y cambios</h2>
-<div class="container my-5 p-5 col-12 col-md-12 col-lg-6 mat-elevation-z8">
+<h2 class="mb-4 mt-4 text-center">Productos - Altas y cambios</h2>
+<div class="container my-5 p-5 col-12 col-md-12 col-lg-6 mat-elevation-z3">
     <form class="form-group">
         <mat-form-field class="lrb-full-width">
             <mat-label>Código</mat-label>
@@ -30,10 +30,11 @@
             </mat-select>
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" type="button" (click)="GuardarProducto()">Guardar</button> &nbsp;
-        <button mat-raised-button color="warn" type="button">Eliminar</button>
+        <button mat-raised-button type="button">Eliminar</button>&nbsp;
+        <button mat-raised-button color="accent" type="button" (click)="GuardarProducto()">Guardar</button>
+
     </form>
-    <button mat-raised-button color="warn" type="button" (click)="buscarProductos()">Eliminar</button>
+    <!-- <button mat-raised-button color="warn" type="button" (click)="buscarProductos()">Eliminar</button> -->
 
 </div>
 
